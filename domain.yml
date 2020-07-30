@@ -1,0 +1,68 @@
+intents:
+ - affirm
+ - resto_search
+ - greet
+ - goodbye
+ - bot_challenge
+ - stop
+
+entities:
+ - cuisine
+ - location
+ - price
+ - people
+
+slots:
+  cuisine:
+    type: text
+  location:
+    type: text
+
+responses:
+  utter_ask_cuisine:
+  # - buttons:
+  #   - payload: Chinese
+  #     title: Chinese
+  #   - payload: Italian
+  #     title: Italian
+  #   - payload: South Indian
+  #     title: South Indian
+  #   - payload: North Indian
+  #     text: North Indian
+  - text: what kind of cuisine would you like?
+
+  utter_ask_howcanhelp:
+  - text: How can I help?
+
+  utter_ask_location:
+  - text: In what location?
+
+  utter_default:
+  - text: I cannot understand
+
+  utter_goodbye:
+  - text: Bye-bye
+  - text: Farewell
+  - text: Goodbye!
+
+  utter_greet:
+  - text: Hi there! How may I help you?
+  - text: Hi, how can I help you?
+  - text: Hey, How is it going? How may I help you this fine day?
+
+  utter_iambot:
+  - text: I am a bot developed using RASA
+  - text: My name is RestoBot, I am here to help you out with your crazy food cravings
+
+actions:
+- action_search_resto
+- utter_ask_cuisine
+- utter_ask_howcanhelp
+- utter_ask_location
+- utter_default
+- utter_goodbye
+- utter_greet
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
